@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Shop - Pay Bills</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Card Shop</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">Card 1</h2>
+        <p class="text-gray-600 mb-4">Price: $10.99</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Buy Now</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">Card 2</h2>
+        <p class="text-gray-600 mb-4">Price: $15.99</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Buy Now</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-lg rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">Card 3</h2>
+        <p class="text-gray-600 mb-4">Price: $8.99</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Buy Now</button>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8">Pay Bills</h2>
+    <form class="mt-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="billAmount">Bill Amount:</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="billAmount" type="number" placeholder="Enter bill amount">
+      </div>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Pay Now</button>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -20,6 +20,8 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
 
+import { engine } from 'express-handlebars';
+
 
 // **** Variables **** //
 
@@ -66,6 +68,10 @@ app.use((
 
 
 // ** Front-End Content ** //
+// app.engine('.hbs');
+
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
 
 // Set views directory (html)
 const viewsDir = path.join(__dirname, 'views');
@@ -76,16 +82,19 @@ const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
 // Nav to users pg by default
-app.get('/', (_: Request, res: Response) => {
-  return res.redirect('/users');
-});
+app.get('/home', (_: Request, res: Response) => {
+  res.render('home', {layout: false, body:'welcome home'});
+})
+
 
 // Redirect to login if not logged in.
 app.get('/users', (_: Request, res: Response) => {
   return res.sendFile('users.html', { root: viewsDir });
 });
 
-
+app.get('*', (_: Request, res: Response) => {
+  return res.send('error page');
+});
 // **** Export default **** //
 
 export default app;
