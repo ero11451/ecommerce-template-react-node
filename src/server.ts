@@ -26,6 +26,10 @@ import { engine } from 'express-handlebars';
 // **** Variables **** //
 
 const app = express();
+require('./db/index')
+
+import productApi from "./routes/products.api"
+
 
 
 // **** Setup **** //
@@ -81,9 +85,10 @@ app.set('views', viewsDir);
 const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
+app.use('/api', productApi)
 // Nav to users pg by default
 app.get('/home', (_: Request, res: Response) => {
-  res.render('home', {layout: false, body:'welcome home'});
+  res.render('home',);
 })
 
 
